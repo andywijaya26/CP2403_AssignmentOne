@@ -12,6 +12,7 @@ public class Main {
         int roadSpawns = 2;
         int carSpawns = 1;
         int lightSpawns = 1;
+        int trafficSignSpawns = 1;
 
 
         //Create objects:
@@ -29,6 +30,14 @@ public class Main {
         for (Road road : roads
         ) {
             road.printRoadInfo();
+        }
+
+        ArrayList<TrafficSign> trafficSigns = new ArrayList<>();
+        System.out.print("\nTraffic Sign;");
+
+        for (int i = 0; i < trafficSignSpawns; i ++){
+            trafficSigns.add(new TrafficSign(Integer.toString(i), roads.get(0)));
+            trafficSigns.get(i).showSignInfo();
         }
 
         System.out.println("\nCars;");
@@ -67,6 +76,11 @@ public class Main {
                 light.operate(random.nextInt());
                 light.printLightStatus();
             }
+            for (TrafficSign trafficSign: trafficSigns){
+                trafficSign.stateOfSign();
+                trafficSign.showSignInfo();
+            }
+
             for (Car car : cars) {
                 car.move();
                 car.printCarStatus();
