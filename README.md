@@ -1,2 +1,2 @@
-# CP2403_AssignmentOne
+# CP2406_AssignmentOne
 A console based simulation of traffic.
